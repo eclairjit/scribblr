@@ -4,11 +4,14 @@ import Container from "./container/Container";
 import LogoutButton from "./header/LogoutButton";
 import Logo from "./logo/Logo";
 import Button from "./button/Button";
-import Input from "./input/Input";
+import Input from "./input/Input.jsx";
 import Select from "./select/Select";
 import PostCard from "./card/PostCard.jsx";
 import Login from "./login/Login.jsx";
 import Signup from "./signup/Signup.jsx";
+import AuthLayout from "./authLayout/AuthLayout.jsx";
+import RTE from "./RTE/RTE.jsx";
+import PostForm from "./postForm/PostForm.jsx";
 
 export {
   Header,
@@ -22,4 +25,7 @@ export {
   PostCard,
   Login,
   Signup,
+  AuthLayout,
+  RTE,
+  PostForm,
 };

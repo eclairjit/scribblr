@@ -1,7 +1,7 @@
 import React, { useId, forwardRef } from "react";
 
 const Input = ({ label, type = "text", className = "", ...props }, ref) => {
-  id = useId();
+  const id = useId();
 
   return (
     <div className="w-full">

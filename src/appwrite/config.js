@@ -141,4 +141,6 @@ export class Service {
   }
 }
 
-export const service = new Service();
+const appwriteService = new Service();
+
+export { appwriteService };

@@ -10,6 +10,16 @@ import {
   createRoutesFromElements,
   Route,
 } from "react-router-dom";
+import {
+  Signup,
+  Login,
+  AddPost,
+  AllPosts,
+  EditPost,
+  Home,
+  Post,
+} from "./pages";
+import { AuthLayout } from "./components/index.js";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -27,7 +37,7 @@ const router = createBrowserRouter(
         path="/signup"
         element={
           <AuthLayout authentication={false}>
-            <Aignup />
+            <Signup />
           </AuthLayout>
         }
       />
@@ -58,7 +68,7 @@ const router = createBrowserRouter(
           </AuthLayout>
         }
       />
-      <Route path="/post/:slug" element={<Post />} />
+      <Route path="/posts/:slug" element={<Post />} />
     </Route>
   )
 );
