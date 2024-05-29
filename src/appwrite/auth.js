@@ -25,7 +25,8 @@ export class AuthService {
       );
 
       if (userAccount) {
-        return this.login({ email, password });
+        this.login({ email, password });
+        return this.getCurrentUser();
       } else {
         return userAccount;
       }
@@ -38,7 +39,8 @@ export class AuthService {
 
   async login({ email, password }) {
     try {
-      return await this.account.createEmailPasswordSession(email, password);
+      await this.account.createEmailPasswordSession(email, password);
+      return this.getCurrentUser();
     } catch (error) {
       throw error;
     }

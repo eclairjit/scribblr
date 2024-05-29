@@ -37,20 +37,24 @@ const Login = () => {
   };
 
   return (
-    <div className="flex items-center justify-center w-full">
+    <div className="flex items-center justify-center w-full text-black h-[70vh] px-4">
       <Toaster richColors position="bottom-right" />
       <div
-        className={`mx-auto w-full max-w-lg bg-gray-100 rounded-xl p-10 border border-black/10`}
+        className={`mx-auto w-full max-w-lg bg-white rounded-xl p-10 md:border md:border-zinc-200 md:shadow-lg md:shadow-zinc-600`}
       >
         <div className="mb-2 flex justify-center">
-          <span className="inline-block w-full max-w-[100px]">
-            <Logo width="100%" />
-          </span>
+          <div className="w-full flex justify-center">
+            <img
+              src="src/assets/scribblr-logo.png"
+              alt="scribblr-logo"
+              className="w-12"
+            />
+          </div>
         </div>
         <h2 className="text-center text-2xl font-bold leading-tight">
-          Sign in to your account
+          Log in to your account
         </h2>
-        <p className="mt-2 text-center text-base text-black/60">
+        <p className="mt-2 text-center text-base text-zinc-500">
           Don&apos;t have any account?&nbsp;
           <Link
             to="/signup"
@@ -59,7 +63,6 @@ const Login = () => {
             Sign Up
           </Link>
         </p>
-        {error && <p className="text-red-600 mt-8 text-center">{error}</p>}
         <form onSubmit={handleSubmit(handlelogin)} className="mt-8">
           <div className="space-y-5">
             <Input
@@ -89,7 +92,10 @@ const Login = () => {
             {errors.password && (
               <p className="text-red-700 mt-1 text-sm">Password is required.</p>
             )}
-            <Button type="submit" className="w-full">
+            <Button
+              type="submit"
+              className="w-full hover:bg-zinc-200 hover:text-zinc-900 hover:font-semibold duration-200"
+            >
               Log in
             </Button>
           </div>

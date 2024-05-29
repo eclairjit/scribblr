@@ -93,13 +93,13 @@ const PostForm = ({ post }) => {
         <Input
           label="Title :"
           placeholder="Title"
-          className="mb-4"
+          className="mb-4 shadow-sm border border-zinc-300"
           {...register("title", { required: true })}
         />
         <Input
           label="Slug :"
           placeholder="Slug"
-          className="mb-4"
+          className="mb-4 shadow-sm border border-zinc-300"
           {...register("slug", { required: true })}
           onInput={(e) => {
             setValue("slug", slugTransform(e.currentTarget.value), {
@@ -118,7 +118,7 @@ const PostForm = ({ post }) => {
         <Input
           label="Featured Image :"
           type="file"
-          className="mb-4"
+          className="mb-4 shadow-sm border border-zinc-300"
           accept="image/png, image/jpg, image/jpeg, image/gif"
           {...register("image", { required: !post })}
         />
@@ -134,13 +134,13 @@ const PostForm = ({ post }) => {
         <Select
           options={["active", "inactive"]}
           label="Status"
-          className="mb-4"
+          className="mb-4 shadow-sm border border-zinc-300"
           {...register("status", { required: true })}
         />
         <Button
           type="submit"
           bgColor={post ? "bg-green-500" : undefined}
-          className="w-full"
+          className="w-full hover:bg-zinc-200 hover:text-zinc-900 hover:font-semibold duration-200"
         >
           {post ? "Update" : "Submit"}
         </Button>

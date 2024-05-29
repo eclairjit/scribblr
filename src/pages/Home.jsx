@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { appwriteService } from "../appwrite/config";
 import { Container, PostCard } from "../components";
+import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Home = () => {
   const [posts, setPosts] = useState([]);
+  const authStatus = useSelector((state) => state.auth.status);
 
   useEffect(() => {
     appwriteService.getPosts().then((posts) => {
@@ -13,7 +16,7 @@ const Home = () => {
     });
   }, []);
 
-  return posts.length > 0 ? (
+  return authStatus ? (
     <div className="w-full py-8">
       <Container>
         <div className="flex flex-wrap">
@@ -28,11 +31,13 @@ const Home = () => {
   ) : (
     <div className="w-full py-8 mt-4 text-center">
       <Container>
-        <div className="flex flex-wrap">
+        <div className="flex h-[60vh] items-center">
           <div className="p-2 w-full">
-            <h1 className="text-2xl font-bold hover:text-gray-500">
-              Login to read posts
-            </h1>
+            <Link to="/login">
+              <h1 className="text-2xl md:text-4xl font-bold hover:text-gray-500 duration-200">
+                Login to read posts
+              </h1>
+            </Link>
           </div>
         </div>
       </Container>

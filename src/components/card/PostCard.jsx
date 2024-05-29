@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 
 const PostCard = ({ $id, title, featuredImage }) => {
   return (
-    <Link to={`/post/${$id}`}>
-      <div className="w-full bg-gray-100 rounded-xl p-4">
-        <div className="w-full justify-center mb-4">
+    <Link to={`/posts/${$id}`}>
+      <div className="w-80 bg-gray-100 rounded-xl p-4">
+        <div className="w-70 justify-center mb-4">
           <img
             src={appwriteService.getFilePreview(featuredImage)}
             alt={title}

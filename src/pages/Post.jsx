@@ -10,7 +10,8 @@ const Post = () => {
   const { slug } = useParams();
   const navigate = useNavigate();
   const userData = useSelector((state) => state.auth.userData);
-  const isAuthor = post && userData ? post.userId === userData.$id : false;
+  const isAuthor =
+    post && userData ? post.userId === userData.userData.$id : false;
 
   useEffect(() => {
     if (slug) {
@@ -42,7 +43,7 @@ const Post = () => {
           <img
             src={appwriteService.getFilePreview(post.featuredImage)}
             alt={post.title}
-            className="rounded-xl"
+            className="rounded-md shadow-lg shadow-zinc-600"
           />
 
           {isAuthor && (
