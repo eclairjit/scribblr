@@ -77,7 +77,7 @@ const Header = () => {
 
           {/* hamburger menu */}
 
-          <div className="md:hidden">
+          <div className="md:hidden mr-3">
             {!toggle ? (
               <button
                 className="text-3xl rotate-90 text-white hover:text-zinc-300 duration-200"
