@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 import { authService } from "../../appwrite/auth.js";
 import { useForm } from "react-hook-form";
 import { toast, Toaster } from "sonner";
+import conf from "../../conf/conf.js";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -44,11 +45,7 @@ const Login = () => {
       >
         <div className="mb-2 flex justify-center">
           <div className="w-full flex justify-center">
-            <img
-              src="src/assets/scribblr-logo.png"
-              alt="scribblr-logo"
-              className="w-12"
-            />
+            <img src={conf.scribblrLogo} alt="scribblr-logo" className="w-12" />
           </div>
         </div>
         <h2 className="text-center text-2xl font-bold leading-tight">

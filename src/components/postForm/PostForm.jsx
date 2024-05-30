@@ -56,7 +56,7 @@ const PostForm = ({ post }) => {
 
         const newPost = await appwriteService.createPost({
           ...data,
-          userId: userData.$id,
+          userId: userData.userData.$id,
         });
 
         if (newPost) {
