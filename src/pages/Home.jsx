@@ -17,11 +17,11 @@ const Home = () => {
   }, []);
 
   return authStatus ? (
-    <div className="w-full py-8">
+    <div className="w-screen py-8">
       <Container>
-        <div className="flex justify-center flex-wrap">
+        <div className="flex justify-center flex-wrap gap-8">
           {posts.map((post) => (
-            <div key={post.$id} className="p-2 w-1/4">
+            <div key={post.$id} className="p-2 w-80">
               <PostCard {...post} />
             </div>
           ))}
