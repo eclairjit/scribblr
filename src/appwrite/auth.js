@@ -25,7 +25,7 @@ export class AuthService {
       );
 
       if (userAccount) {
-        this.login({ email, password });
+        await this.login({ email, password });
         return this.getCurrentUser();
       } else {
         return userAccount;
